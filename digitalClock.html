@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>Digital Clock</title>
+		<style>
+			p{
+				width: 400px; 
+				height: 200px;
+				
+				position: absolute;
+				top: 200px;
+				left: 450px;
+				
+				font-size: 50px;
+				color: black;
+
+				text-align: center;
+				line-height: 200px;
+				
+				background-color: white;
+				border-left: 20px solid grey;
+				border-right: 20px solid grey;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<p id="content"></p>
+	
+		<script>
+		var time = document.getElementById("content");
+
+		var addZero = function(x) {
+			return x < 10 ? '0' + x : x;
+		};
+		
+		var clock = function() {
+			var d = new Date();
+			var h = addZero( d.getHours() );
+			var m = addZero( d.getMinutes() );
+			var s = addZero( d.getSeconds() );
+			var now = [h,m,s].join(":");
+			time.innerHTML = now;
+			setInterval(clock, 1000);
+		};
+		
+		clock();
+		</script>
+	
+	</body>
+	
+</html>
