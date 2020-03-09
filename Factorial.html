@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fact. Cal.</title>
+		<meta charset="utf-8">
+		<style>
+		input{
+			margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h2>Factorial Calculation</h2>
+		
+		<form>
+			<input type="text" id="text1">
+			<input type="button" id="button1" value="Calculate">
+		</form>
+		
+		<div id="result1" style="color: red;"></div>	
+		
+		<script>
+			function Fact(){
+				var total = 1;
+				var number = document.getElementById("text1").value;
+				number = Number(number);
+			
+				if(number > 0){
+					for(var i = 1; i <= number; i++){
+						total *= i;
+						document.getElementById("result1").innerHTML = total;
+					}
+					return total;
+				}
+				else{
+					document.getElementById("result1").innerHTML = "Undefined.";
+				}	
+			}
+			var button= document.getElementById("button1");	
+				
+			button.onclick = Fact;	
+		</script>
+	</body>
+</html>
