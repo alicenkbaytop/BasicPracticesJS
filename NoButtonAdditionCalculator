@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Add Cal</title>
+		<meta charset="utf-8">
+	</head>
+	
+	<body>
+		<p>-Addition Calculator-</p>
+		
+		<form>
+			<label for="text1">	1.number:</label>
+			<input type="text" id="text1" name="text1" >
+			
+			<br><br>
+			
+			<label for="text2">	2.number:</label>
+			<input type="text" id="text2" name="text2">
+		</form>
+		
+		<div id="result1" style="color:red;"></div>
+		
+		<script>
+			var number1 = document.getElementById("text1");
+			var number2 = document.getElementById("text2");
+			var result = document.getElementById("result1");
+			
+			function Calculate(){
+				var total = Number(number1.value) + Number(number2.value);
+				result.innerHTML = total;
+			}
+			
+			number1.oninput = Calculate;
+			number2.oninput = Calculate;
+			
+		</script>	
+	</body>
+</html>
