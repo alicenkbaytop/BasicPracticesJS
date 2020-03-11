@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>Random Num.</title>
+		<meta charset="utf-8">
+		<style>
+			div{
+				width: 400px;
+				border: black solid 5px;
+				text-align: center;
+				margin: auto;
+			}
+			#area{
+				background-color: yellow;
+				width: 100px;
+				margin: auto;
+				margin-bottom: 10px;
+				padding: 10px;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	
+	<body>
+		
+		<div id="all"><h1>Random Number</h1><p id="area"></p></div>
+		
+		<script>
+			var number, random;
+			
+			number = document.getElementById("area");
+			number.innerHTML = makeRandom(0,100);
+			
+			function makeRandom(min,max){
+				random = Math.floor(Math.random()*(max-min))+min;
+				return random;
+			}
+		</script>
+	</body>
+</html>
