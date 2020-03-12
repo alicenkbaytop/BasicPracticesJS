@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Merhabalar</title>
+		<meta charset="utf-8">
+		<style>
+			#all{
+				width: 400px;
+				height: 200px;
+				border: black solid 5px;
+				margin: auto;
+				padding: 10px;
+				text-align: center;
+				background-color: lightblue;	
+			}
+			#textMidterm, #textFinal{
+				width: 50px;
+				margin: 5px;
+			}
+			#calculate{
+				position: absolute;
+				width: 80px;
+				top: 140px;
+				margin-left: 10px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="all">
+		<h1>Calculate Average</h1>
+		<label for="textMidterm">Midterm Point: <input type="text" id="textMidterm" name="textMidterm"></label><br>
+		<label for="textFinal">Final Point: <input type="text" id="textFinal" name="textFinal"></label>
+		<input type="button" id="calculate" value="Calculate">
+		
+		<p id="result"></p>
+		</div>
+		<script>
+			var Midterm, Final, Calculate;
+
+			Midterm = document.getElementById("textMidterm");
+			Final = document.getElementById("textFinal");
+			Calculate = document.getElementById("calculate");
+			
+			Calculate.onclick = function calculatePoint(){
+				var mP, fP, aP;
+				
+				mP = Number(Midterm.value);
+				fP = Number(Final.value);
+				
+				if(fP >= 50){
+					aP = ((mP*40)/100) + ((fP*60)/100);
+					if(aP >= 50){
+						document.getElementById("result").innerHTML = "You passed "+aP+"(min.50)";
+					}
+					else{
+						document.getElementById("result").innerHTML = "You failed "+aP+"(min.50)";
+					}
+				}
+				else{
+					document.getElementById("result").innerHTML = "You failed "+"(min.50)";
+				}
+			}
+		</script>		
+	</body>
+</html>
