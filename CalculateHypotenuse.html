@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hypotenuse</title>
+		<meta charset="utf-8">
+		<style>
+			#area{
+				width: 400px;
+				border: 2px black solid;
+				margin: auto;
+				text-align: center;
+				background-color: lightblue;
+			}
+			#side1,#side2{
+				width: 50px;
+				padding: 5px;
+				margin: 10px;
+			}
+			#calculate{
+				margin: 10px;
+			}
+			#result{
+				width: 200px;
+				border: black dashed 5px;
+				margin: auto;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="area">
+			<h1>Calculate Hypotenuse</h1>
+			<label for="side1">1.side: </label><input type="text" id="side1" value="side1"><br>
+			<label for="side2">2.side: </label><input type="text" id="side2" value="side2"><br>
+			<input type="button" id="calculate" value="Calculate">
+			<div id="result">.....</div>
+		</div>	
+		<script>
+			var Side1, Side2, Calculate, Result;
+			
+			Side1 = document.getElementById("side1");
+			Side2 = document.getElementById("side2");
+			Calculate = document.getElementById("calculate");
+			Result = document.getElementById("result");
+			
+			Calculate.onclick = function(){
+				var hypotenuse = Math.sqrt((Side1.value*Side1.value) + (Side2.value*Side2.value))
+				Result.innerHTML = hypotenuse;
+			}
+		</script>		
+	</body>
+</html>
