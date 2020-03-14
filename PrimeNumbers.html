@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Prime Num.</title>
+		<meta charset="utf-8">
+		
+		<style>
+			#area{
+				width: 300px;
+				margin: auto;
+				border: black solid 5px;
+				background-color: lightblue;
+				padding: 10px;
+				text-align: center;
+			}
+			#btnNumber{
+				margin: 10px;
+			}
+			#result{
+				padding: 10px;
+				margin: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="area">
+		<label for="txtNumber">Number:</label>
+		<input type="text" id="txtNumber" value="23">
+		<input type="button" id="btnNumber" value="Calculate">
+		<div id="result">...</div>
+		</div>
+		
+		<script>
+			var txtNumber, btnNumber, result;
+			
+			txtNumber = document.querySelector("#txtNumber");
+			btnNumber = document.querySelector("#btnNumber");
+			result = document.querySelector("#result");
+			
+			btnNumber.onclick = function(){
+				var counter=0, i=2;
+				for(;i < txtNumber.value; i++){
+					if(txtNumber.value % i ==0){
+						counter++;
+					}
+				}
+				if(counter == 0){
+					result.innerHTML = "This number is prime.";
+				}
+				else{
+					result.innerHTML = "This number is not prime and there is "+counter+" divisor.";
+				}
+			}
+		</script>
+	</body>
+</html>
