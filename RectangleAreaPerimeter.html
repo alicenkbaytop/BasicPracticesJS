@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rectangle</title>
+		<meta charset="utf-8">
+		<style>
+			#all{
+				width: 400px;
+				border: 2px black solid;
+				margin: auto;
+				text-align: center;
+				background-color: lightblue;
+			}
+			#side1,#side2{
+				width: 50px;
+				padding: 5px;
+				margin: 10px;
+			}
+			#calculate{
+				margin: 10px;
+			}
+			#area, #perimeter{
+				
+				margin: auto;
+				margin-bottom: 10px;
+				display: inline-block;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="all">
+			<h1>Rectangle Calculator</h1>
+			<label for="side1">First side: <input type="text" id="side1" value="10"><label>
+			<label for="side2">Second side: <input type="text" id="side2" value="10"><label>
+			<input type="button" id="calculate" value="Calculate">
+			<label for="area">Area:<p id="area">........</p></label>
+			<label for="perimeter">Perimeter:<p id="perimeter">........</p></label>
+		</div>	
+		<script>
+			var Calculate, Area, Perimeter;
+	
+			Calculate = document.querySelector("#calculate");
+			Area = document.querySelector("#area");
+			Perimeter = document.querySelector("#perimeter");
+			
+			Calculate.onclick = function(){
+				var Side1, Side2, a, p;
+				
+				Side1 = document.querySelector("#side1").value;
+				Side2 = document.querySelector("#side2").value;
+				
+				Side1 = Number(Side1);
+				Side2 = Number(Side2);
+				a = Number(Area);
+				p = Number(Perimeter);
+				
+				p = (Side1*2) + (Side2*2);
+				a = Side1*Side2;
+				
+				Area.innerHTML = a;
+				Perimeter.innerHTML = p;
+			}
+		</script>		
+	</body>
+</html>
