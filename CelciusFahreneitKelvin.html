@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>C-F</title>
+		<meta charset="utf-8">
+		<style>
+			.all{
+				width: 500px;
+				margin: auto;
+				background-color: lightblue;
+				border: solid darkblue 5px;
+				border-radius: 50%;
+				text-align: center;
+				padding: 10px;
+			}
+			.result1{
+				margin: 10px;
+			}
+			.result2{
+				margin: 10px;
+			}
+			.result3{
+				margin: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="all">
+			<h1>Calculate C-F-K</h1>
+			<label for="text1">Enter Celcius:<input type="text" id="c" placeholder="0"></label>
+			<div class="result1">...</div>
+			<label for="text2">Enter Fahrenheit:<input type="text" id="f" placeholder="0"></label>
+			<div class="result2">...</div>
+			<label for="text2">Enter Kelvin:<input type="text" id="k" placeholder="0"></label>
+			<div class="result3">...</div>
+			<input type="button" value="Calculate" onclick="coverter()">
+		</div>
+		
+		<script>
+			function coverter(){
+				var txtC, txtF, txtK, c_f, c_k, f_c, f_k, k_c, k_f;
+			
+				txtC = document.querySelector("#c").value;
+				txtC = Number(txtC);
+				
+				txtF = document.querySelector("#f").value;
+				txtF = Number(txtF);
+				
+				txtK = document.querySelector("#k").value;
+				txtK = Number(txtK);
+				
+				c_f = (1.8 * txtC)+32;
+				c_k = txtC + 273.15;
+				f_c = (txtF-32) * (5/9);
+				f_k = (txtF + 459.67) *(5/9); 
+				k_c = txtK - 273.15;
+				k_f = txtK *(5/9) - 459.67;
+
+				document.querySelector(".result1").innerHTML = "("+c_f+")"+" F."+"("+c_k+")"+" K.";
+				document.querySelector(".result2").innerHTML = 	"("+f_c+")"+" C."+"("+f_k+")"+" K.";;
+				document.querySelector(".result3").innerHTML = 	"("+k_c+")"+" C."+"("+k_f+")"+" F.";;
+			}
+		</script>	
+	</body>
+</html>
