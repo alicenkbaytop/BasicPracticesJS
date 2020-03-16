@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Change Background Color</title>	
+	</head>
+	
+	<body>
+		<input type="button" id="change" value="Change Color" onclick="changeColor()">
+		<script>
+			var Colors =["#CC857C","#905851","#150D0C","#070D5B","#C3920E","#0EC324","#C30E9A","#45C30E","#EE3A24","#65160C","#575150","#FE7867","#853227","#DE6A5C"];
+			
+			function changeColor(){
+				var random = Math.floor(Math.random()*Colors.length);
+				document.body.style.backgroundColor = Colors[random];
+			}
+		</script>
+	</body>
+</html>
