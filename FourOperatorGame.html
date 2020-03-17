@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			body{
+				color: yellow;
+				background: purple;
+			}
+		
+			#game{
+				width: 400px;
+				background: #00F9FF;
+				margin: auto;
+				text-align: center;
+			}
+			h1{
+				border: solid 5px black;
+			}
+			span{
+				font-size: 20px;
+				padding: 10px;
+			}
+			#answer{
+				width: 100px;
+				margin: 10px;
+			}
+			#check{
+				background: #FFA500;
+				border: none;
+			}
+			#True, #False{
+				display: inline-block;
+				font-size: 20px;
+				padding: 10px;
+			}
+			#True{
+				background: green;
+			}
+			#False{
+				background: red;
+			}
+			
+		
+		</style>
+	</head>
+	
+	<body>
+		<div id="game">
+		<h1>Four Operations Game</h1>
+		<span id="number1">0</span>
+		<span id="operator">+</span>
+		<span id="number2">0</span>
+		<span>=</span>
+		<input type="text" id="answer">
+		<input type="button" id="check" value="check">
+		<div style="clear: both;"></div>
+		<div id="True">0</div>
+		<div id="False">0</div>
+		<div style="clear: both;"></div>
+		</div>
+	</body>
+
+	<script>
+		var number1, number2, operator, result, check, True=0, False=0;
+		
+		number1 = document.getElementById("number1");
+		number2 = document.getElementById("number2");
+		operator = document.getElementById("operator");
+		answer = document.getElementById("answer");
+		check = document.getElementById("check");
+		True = document.getElementById("True");
+		False = document.getElementById("False");	
+		
+		function makeRandom(min, max){
+			var random = Math.round(Math.random()*(max-min))+min;
+			return random;
+		}
+		
+		function newQuestion(){
+			var operation = ['+','-','/','*'];
+			operator.textContent = operation[makeRandom(0,4)];
+			number1.textContent = makeRandom(0,50);
+			number2.textContent = makeRandom(0,50);
+			
+			if(operator.textContent == "/"){
+				while(true){
+					number2.textContent = makeRandom(0,50);
+					if(number1.textContent % number2.textContent == 0){
+						break;
+					}
+				}
+			}
+		}
+		
+		window.onload=function(){
+			newQuestion();
+		}
+		
+		check.onclick=function(){
+			var ans, Number1, Number2;
+			Number1 = Number(number1.textContent);
+			Number2 = Number(number2.textContent);
+			
+			switch(operator.textContent){
+				case '+': ans= Number1 + Number2; break;
+				case '-': ans= Number1 - Number2; break;
+				case '*': ans= Number1 * Number2; break;
+				case '/': ans= Number1 / Number2; break;
+				default: break;		
+			}
+			
+			if(answer.value == ans){
+				True.textContent = Number(True.textContent) +1;
+			}
+			
+			else{
+				False.textContent = Number(False.textContent) +1;
+			}
+			newQuestion();
+		}
+	</script>
+</html>
