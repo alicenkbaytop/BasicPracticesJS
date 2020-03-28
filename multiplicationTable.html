@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mul-Tab</title>
+		<style>
+		</style>
+	</head>
+    <body>
+		<script>
+		var column,row;
+			document.write("<table border = '3'><tr>");
+			for(column=1; column <= 10; column++){
+				document.write("<td>");
+				for(row=1; row <= 10; row++){
+					document.write(column + "x" + row + "=" + column*row + "<br>");
+				}
+				if(column==5){
+					document.write("</tr><tr>");
+				}
+				document.write('</td>');
+			}
+			document.write('</tr></table>');
+		</script>
+    </body>
+</html>
