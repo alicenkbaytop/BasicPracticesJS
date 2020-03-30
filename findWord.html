@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1></h1>
+        <p id="p1">Hello, what is your life purpose?</p>
+        <input type="button" id="find" value="find">
+        <input type="text" id="start" value="Start">
+        <p id="p2"></p>
+
+        <script>
+            var find = document.querySelector('#find');
+
+            var start = document.querySelector('#start');
+
+            find.onclick = function(){
+                var str = document.querySelector('#p1').innerHTML;
+                var location = str.search(start.value);
+                document.querySelector('#p2').innerHTML = location;
+          }
+        </script>
+    </body>
+</html>
