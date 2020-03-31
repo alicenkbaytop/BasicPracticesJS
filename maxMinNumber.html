@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var numbers = new Array(20);
+            var min, max; 
+
+            for(var i = 0; i < numbers.length; i++){
+                numbers[i] = Math.floor(Math.random() * 100+1);
+            }
+
+            min = numbers[0];
+            max = numbers[0];
+
+            for(var i = 0; i < numbers.length; i++){
+                
+                if(min > numbers[i]){
+                    min = numbers[i];
+                }
+                if(max < numbers[i]){
+                    max = numbers[i];
+                }
+            }
+        
+            for(var counter = 0; counter < numbers.length; counter++){
+                document.write(numbers[counter]+'<br>');
+            }
+            document.write('max is '+max+' ');
+            document.write('min is '+min);
+
+        </script>
+    </body>
+</html>
